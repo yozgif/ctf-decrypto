@@ -4,8 +4,6 @@ function Unicode_de(data){
 }
 
 
-
-
 function print_ret(data){
     $("#ret").text(data);
     if($('#auto_swp_in_out').get(0).checked){
@@ -113,7 +111,8 @@ function str_template(){
     var paras = JSON.parse(data['paras']);
     var p1 = paras[0];
     var p2 = paras[1];
-
+    var p3 = paras[2];
+    var p4 = paras[3];
 
     const str_reverse = s => s.split('').reverse().join('');
     const str_up_low  = s => s = '小写：'+s.toLowerCase()+'\r\n'  + '大写：'+s.toUpperCase()
@@ -129,8 +128,19 @@ function str_template(){
     };
 
     const str_calc    = s => {
-        s = bytestr2str(s).split('').map((x,i)=>eval(String(x.charCodeAt())+p1));
-        return String.fromCharCode(...s);};
+        s = bytestr2str(s).split('').map((x,i)=>{
+            x = x.charCodeAt()
+            if (p1 === "" || eval(p1)) {
+                return eval(String(x)+p2);
+            }
+            
+            if (p3 === "" || eval(p3)) {
+                return eval(String(x)+p4);
+            }
+            return x;       
+        });
+        return String.fromCharCode(...s);
+    };
 
     s = eval(encrypt)(s);
     print_ret(s);
@@ -180,9 +190,6 @@ $(document).ready(function(){
         $("#ret").text($("#tmp").text());
         $("#tmp").text(tmp);
     });
-
-
-
 
 
     $(".btn-default").click(function(){

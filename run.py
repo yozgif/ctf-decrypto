@@ -10,7 +10,7 @@ j = json.load(open(json_file, encoding='utf-8'))
 
 @app.route('/')
 def new():
-    return render_template('index_new.html', j=j)
+    return render_template('index.html', j=j)
 
 @app.route('/process', methods=['POST'])
 def process():
@@ -19,6 +19,8 @@ def process():
     encrypt = data['encrypt']
     method = data['method']
     paras = json.loads(data['paras'])
+    if method not in ('en','de'):
+        return
     try:
         exp = encrypt+'.'+method+'(s, *paras)'
         ret = eval(exp)
@@ -32,4 +34,4 @@ def process():
 
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=90)
+    app.run(host="127.0.0.1", port=80)

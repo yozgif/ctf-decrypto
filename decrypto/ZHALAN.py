@@ -10,7 +10,7 @@ def de(e):
         b = elen // f
         result = {x:'' for x in range(b)}
         for i in range(elen):
-            a = i % b;
+            a = i % b
             result.update({a:result[a] + e[i]})
         d = ''
         for i in range(b):

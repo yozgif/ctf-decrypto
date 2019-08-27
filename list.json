@@ -4,7 +4,7 @@
     "entry":
     [
       {
-        "name": "10 <-> 16",
+        "name": "10>16",
         "id": "HEX_DEC",
         "class": "python",
         "paras": "分隔符",
@@ -12,14 +12,14 @@
         "hint": ""
       },
       {
-        "name": "2 <-> 16",
+        "name": "2>16",
         "id": "HEX_BIN",
         "class": "python",
         "paras": "",
         "hint": ""
       },
       {
-        "name": "16 <-> ascii",
+        "name": "ascii>16",
         "id": "HEX_STR",
         "class": "python",
         "paras": "",
@@ -65,9 +65,9 @@
         "name": "运算",
         "id": "str_calc",
         "class": "str",
-        "paras": "算式",
-        "default_para": "+3/-1/^0xff都可以",
-        "hint": ""
+        "paras": "条件1, 算式1, 条件2, 算式2",
+        "default_para": ",+1/^0xff都可以,,+1/^0xff都可以,",
+        "hint": "灵活计算，比如大小写互换、异或。i为index，x为字符ASCII码，可用于条件和算式中"
       },
       {
         "name": "字符 <-> 字节",
@@ -194,13 +194,6 @@
         "hint": ""
       },
       {
-        "name": "ROT13",
-        "id": "ROT13",
-        "class": "python",
-        "paras": "",
-        "hint": ""
-      },
-      {
         "name": "凯撒",
         "id": "CASER",
         "class": "python",
@@ -220,7 +213,13 @@
         "class": "python",
         "paras": "",
         "hint": ""
-      },
+      }
+    ]
+  },
+  {
+    "name": "现代加密",
+    "entry":
+    [
       {
         "name": "DES",
         "id": "DES",
@@ -241,20 +240,22 @@
         "class": "python",
         "paras": "key,算法",
         "hint": "默认header为{\"typ\": \"JWT\",\"alg\": \"HS256\"}； 默认算法为HS256； 在线工具 https://jwt.io/"
-      }
-    ]
-  },
-  {
-    "name": "RSA专项",
-    "entry":
-    [
+      },
       {
-        "name": "解密",
+        "name": "RSA",
         "id": "RSA_decrypt",
         "class": "python",
         "paras": "p,q,e",
         "default_para": ",,默认65537",
         "hint": "根据p, q, e解码。密文，p, q 若不包括A-F则按照10进制处理，如包含则按照16进制处理"
+      },
+      {
+        "name": "SM4",
+        "id": "SM4",
+        "class": "python",
+        "paras": "key",
+        "default_para": "",
+        "hint": ""
       }
     ]
   }

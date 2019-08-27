@@ -4,3 +4,4 @@ flask
 chardet
 pyjwt
 base65536
+sm4
