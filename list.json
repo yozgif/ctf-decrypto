@@ -1,0 +1,261 @@
+[
+  {
+    "name": "进制转换",
+    "entry":
+    [
+      {
+        "name": "10 <-> 16",
+        "id": "HEX_DEC",
+        "class": "python",
+        "paras": "分隔符",
+        "default_para": "默认以空格分隔",
+        "hint": ""
+      },
+      {
+        "name": "2 <-> 16",
+        "id": "HEX_BIN",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "16 <-> ascii",
+        "id": "HEX_STR",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      }
+    ]
+  },
+  {
+    "name": "字符处理",
+    "entry":
+    [
+      {
+        "name": "逆序",
+        "id": "str_reverse",
+        "class": "str",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "大小写",
+        "id": "str_up_low",
+        "class": "str",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "分割",
+        "id": "str_split",
+        "class": "str",
+        "paras": "分隔间隔,分隔符",
+        "default_para": " ,默认空格",
+        "hint": ""
+      },
+      {
+        "name": "替换",
+        "id": "str_replace",
+        "class": "str",
+        "paras": "正则匹配,替换为",
+        "default_para": "\\s,",
+        "hint": ""
+      },
+      {
+        "name": "运算",
+        "id": "str_calc",
+        "class": "str",
+        "paras": "算式",
+        "default_para": "+3/-1/^0xff都可以",
+        "hint": ""
+      },
+      {
+        "name": "字符 <-> 字节",
+        "id": "str_byte",
+        "class": "python",
+        "paras": "编码方式",
+        "default_para": "会自动判别编码方式。utf-8，gbk等",
+        "hint": ""
+      }
+    ]
+  },
+  {
+    "name": "常见编码",
+    "entry":
+    [
+      {
+        "name": "URL",
+        "id": "URL",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "HTML",
+        "id": "HTML",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "Unicode",
+        "id": "Unicode",
+        "class": "js",
+        "paras": "",
+        "hint": "支持 \\u0041\\u0042 -> AB , \\101\\102 -> AB , \\x41\\x42 -> AB"
+      },
+      {
+        "name": "ROT13",
+        "id": "ROT13",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "BASE64",
+        "id": "BASE64",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "BASE32",
+        "id": "BASE32",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      }
+    ]
+  },
+  {
+    "name": "生僻编码",
+    "entry":
+    [
+      {
+        "name": "UU",
+        "id": "UU",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "jscript",
+        "id": "jscript",
+        "class": "js",
+        "paras": "",
+        "hint": "jscript编码以#@~^开头，^#~@结尾"
+      },
+      {
+        "name": "BASE65536",
+        "id": "BASE65536",
+        "class": "python",
+        "paras": "",
+        "hint": "编码后的特点：大量中文字加乱码"
+      },
+      {
+        "name": "brainfuck/ook",
+        "id": "BRAINFUCK",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "quote-print",
+        "id": "QUOTE_PRINTABLE",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      }
+    ]
+  },
+  {
+    "name": "常见加密",
+    "entry":
+    [
+      {
+        "name": "摩斯",
+        "id": "MORSE",
+        "class": "python",
+        "paras": "",
+        "hint": "基础符号： . 和 - ，用空格间隔。例如： .- -... -> AB"
+      },
+      {
+        "name": "培根",
+        "id": "BACON",
+        "class": "python",
+        "paras": "",
+        "hint": "基础符号：a 和 b"
+      },
+      {
+        "name": "栅栏",
+        "id": "ZHALAN",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "ROT13",
+        "id": "ROT13",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "凯撒",
+        "id": "CASER",
+        "class": "python",
+        "paras": "偏移数",
+        "hint": ""
+      },
+      {
+        "name": "维吉尼亚",
+        "id": "vigenere",
+        "class": "js",
+        "paras": "key,key长度",
+        "hint": "支持无密钥解密，可填写最有可能的key长度来辅助爆破key"
+      },
+      {
+        "name": "MD5",
+        "id": "MD5",
+        "class": "python",
+        "paras": "",
+        "hint": ""
+      },
+      {
+        "name": "DES",
+        "id": "DES",
+        "class": "python",
+        "paras": "key,iv",
+        "hint": "cipher, key和iv 都支持直接输入\\x0f形式的字节"
+      },
+      {
+        "name": "AES",
+        "id": "AES",
+        "class": "python",
+        "paras": "key,iv",
+        "hint": "cipher, key和iv 都支持直接输入\\x0f形式的字节。支持模式为CBC+PKCS5/7、ECB，不输入iv时为ECB模式，输入iv为CBC；一些程序在CBC模式加密时未指定iv，此时iv可考虑填写key的值或1234567890123456"
+      },
+      {
+        "name": "JWT",
+        "id": "JWT",
+        "class": "python",
+        "paras": "key,算法",
+        "hint": "默认header为{\"typ\": \"JWT\",\"alg\": \"HS256\"}； 默认算法为HS256； 在线工具 https://jwt.io/"
+      }
+    ]
+  },
+  {
+    "name": "RSA专项",
+    "entry":
+    [
+      {
+        "name": "解密",
+        "id": "RSA_decrypt",
+        "class": "python",
+        "paras": "p,q,e",
+        "default_para": ",,默认65537",
+        "hint": "根据p, q, e解码。密文，p, q 若不包括A-F则按照10进制处理，如包含则按照16进制处理"
+      }
+    ]
+  }
+]

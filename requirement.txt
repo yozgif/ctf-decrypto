@@ -1,0 +1,6 @@
+pycryptodome
+pyDes
+flask
+chardet
+pyjwt
+base65536

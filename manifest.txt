@@ -1,0 +1,24 @@
+#    id: 英文
+#    name：UI显示的名称
+#    class: python/js_str/js_other
+#    row: （功能按键+字符处理，字符字节，常见编码，其它加密）
+#    para： 参数个数/参数名
+#    hint：说明和帮助
+///
+paras   label和input在一行，自适应
+
+
+
+file_write, 16进制写文件, 2, py, 0
+CASER, 凯撒, 3, py, 1/num_offset
+WEIJINIYA, 维吉尼亚, 3, py, 1/!!!!!!!!
+SHA1, SHA1, 4, py, 0
+RSA, RSA, 4, py, !!!!!!!!!!!
+
+
+str相关的函数在str_template中实现
+
+每添加一项编解码，需要修改的有：
+1. list.json
+2. 如果是python实现，decrypto中添加id同名py，实现en,de
+3. 如果是js实现，static中添加id同名js，实现id_en, id_de；index.html header中添加static/js实现路径

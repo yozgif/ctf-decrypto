@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>编解码</title>
+    <script src="static/jquery.min.js"></script>
+    <script src="static/bootstrap.min.js"></script>
+    <script src="static/FileSaver.js"></script>
+    <script src="static/content.js"></script>
+    <script src="static/jscript.js"></script>
+    <script src="static/vigenere.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+    <style>
+     .form-control2{
+        resize: vertical;
+        min-height: 150px;
+        max-height: 300px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border: 1px solid #f60;
+     }
+     .form-control{
+        resize: vertical;
+     }
+     .btn-circle {
+         width: 30px;
+         height: 30px;
+         text-align: center;
+         padding: 4px 0;
+         font-size: 19px;
+         line-height: 1.2;
+         border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% for row in j %}
+            <div class="row">
+                {% if loop.first %}
+                 <span>当前模式： </span>
+                 <button id="method" class="btn btn-danger">解码</button>
+                 <button id="save_out" class="btn btn-default">保存</button>
+                {% endif %}
+
+                <span>{%if loop.first%}&emsp;{%endif%}{{ row.name }}： </span>
+                <div class="btn-group">
+                    {% for entry in row.entry %}
+                    <button id="{{entry.id}}" class="{{entry.class}} btn btn-default" paras="{{entry.paras}}" default_para="{{entry.default_para}}" hint="{{entry.hint}}">{{entry.name}}</button>
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+    
+    <div class="container">
+    
+        <div class="form-group col-xs-5">
+        <br>
+                <span>提示： </span><span id="hint"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="form-group col-xs-5">
+            <label class="control-label">输入区</label><span style="float:right">当前字符长度：<span id="length">0</span></span>
+            <span><div id="text" contenteditable=true class="form-control2" rows="6" ></div></span>
+        </div>
+
+        <div class="paras form-group col-xs-3"></div>
+
+    </div>
+
+    <div class="container">
+        <div class="form-group col-xs-3" style="text-align: right;">
+            <button id="swp_in_out" type="button" class="btn btn-circle">⇅</button>
+        </div>
+        <div class="form-group col-xs-2" style="text-align: right;">
+            <input id="auto_swp_in_out" type="checkbox">自动交换</button>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="form-group col-xs-5">
+            <label class="control-label">输出区</label>
+            <div id="ret" contenteditable=true class="form-control2" rows="6"></div>
+        </div>
+
+        <div style="float:left">
+            <br><br><br><br>
+            <button id="swp_out_tmp" type="button" class="btn btn-circle">⇄</button>
+        </div>
+
+        <div class="form-group col-xs-3" style="float:left">
+            <label class="control-label">临时存储区</label>
+            <div id="tmp" contenteditable=true class="form-control2" rows="6"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
